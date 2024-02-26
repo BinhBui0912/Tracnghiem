@@ -83,7 +83,7 @@ function checkAnswers2() {
 
         }
         else {
-            alert("nhập câu trả lời " + (i + 10));
+            alert("nhập câu trả lời ");
             return
         }
     }
