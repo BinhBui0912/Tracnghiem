@@ -3,18 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduce</title>
+    <title>Thi trắc nghiệm</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Thông tin cá nhân:</h1>
-    <img src="img/1.jpg" alt="mặt của tôi" width="300" height="350">
-    <figcaption>Ảnh cá nhân</figcaption>
-    <ul>
-        <li>Họ và tên: Bùi Duy Bình</li>
-        <li>Mã sinh viên: B21DCCN170</li>
-        <li>Lớp sinh viên: D21CQCN02-B</li>
-        <li>Sở thích: Lập trình, chơi game, nghe nhạc</li>
-    </ul>
-     <h2>Cảm ơn vì đã xem!!</h2>
+    <div class="container">
+        <h2 id="nhap">Nhập thông tin sinh viên</h2>
+        <form id="studentForm">
+            <div class="form-group">
+                <label for="fullName">Họ và tên:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Ngày sinh:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="studentID">Mã sinh viên:</label>
+                <input type="text" id="studentID" name="studentID" required>
+            </div>
+            <div class="form-group">
+                <label for="className">Lớp:</label>
+                <input type="text" id="className" name="className" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="studentInfoContainer"></div>
+
+        <div id="quizContainer" class="hidden">
+            <h3>Bộ câu hỏi</h3>
+            <div class="question-group">
+                <h4>Nhóm 1: Câu hỏi đúng/sai</h4>
+                <div class="question">
+                    <p>Câu 1: Trái cây là thực phẩm tốt cho sức khỏe?</p>
+                    <input type="radio" id="q1A" name="q1" value="A">
+                    <label for="q1A">A. Đúng</label><br>
+                    <input type="radio" id="q1B" name="q1" value="B">
+                    <label for="q1B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 2: Con người sống trên Mặt Trăng?</p>
+                    <input type="radio" id="q2A" name="q2" value="A">
+                    <label for="q2A">A. Đúng</label><br>
+                    <input type="radio" id="q2B" name="q2" value="B">
+                    <label for="q2B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 3: Mặt Trời quay quanh Trái Đất?</p>
+                    <input type="radio" id="q3A" name="q3" value="A">
+                    <label for="q3A">A. Đúng</label><br>
+                    <input type="radio" id="q3B" name="q3" value="B">
+                    <label for="q3B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 4: 2 + 2 bằng 5?</p>
+                    <input type="radio" id="q4A" name="q4" value="A">
+                    <label for="q4A">A. Đúng</label><br>
+                    <input type="radio" id="q4B" name="q4" value="B">
+                    <label for="q4B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 5: Nước là một chất rắn?</p>
+                    <input type="radio" id="q5A" name="q5" value="A">
+                    <label for="q5A">A. Đúng</label><br>
+                    <input type="radio" id="q5B" name="q5" value="B">
+                    <label for="q5B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 6: Một ngày có 24 giờ?</p>
+                    <input type="radio" id="q6A" name="q6" value="A">
+                    <label for="q6A">A. Đúng</label><br>
+                    <input type="radio" id="q6B" name="q6" value="B">
+                    <label for="q6B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 7: Cá mập sống ở sa mạc?</p>
+                    <input type="radio" id="q7A" name="q7" value="A">
+                    <label for="q7A">A. Đúng</label><br>
+                    <input type="radio" id="q7B" name="q7" value="B">
+                    <label for="q7B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 8: Hoa hồng là loài thực vật?</p>
+                    <input type="radio" id="q8A" name="q8" value="A">
+                    <label for="q8A">A. Đúng</label><br>
+                    <input type="radio" id="q8B" name="q8" value="B">
+                    <label for="q8B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 9: Bàn tay của chúng ta có 5 ngón?</p>
+                    <input type="radio" id="q9A" name="q9" value="A">
+                    <label for="q9A">A. Đúng</label><br>
+                    <input type="radio" id="q9B" name="q9" value="B">
+                    <label for="q9B">B. Sai</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 10: 1 + 1 = 2?</p>
+                    <input type="radio" id="q10A" name="q10" value="A">
+                    <label for="q10A">A. Đúng</label><br>
+                    <input type="radio" id="q10B" name="q10" value="B">
+                    <label for="q10B">B. Sai</label><br>
+                </div>
+                <button onclick="checkAnswers()">Submit</button>
+                <div id="result"></div>
+            </div>
+            <div class="question-group">
+                <h4>Nhóm 2: Câu hỏi chọn 1 đáp án</h4>
+                <div class="question">
+                    <p>Câu 1: Bao nhiêu chân mà một con chó có?</p>
+                    <input type="radio" id="q1A" name="q1" value="A">
+                    <label for="q1A">A. 2</label><br>
+                    <input type="radio" id="q1B" name="q1" value="B">
+                    <label for="q1B">B. 4</label><br>
+                    <input type="radio" id="q1C" name="q1" value="C">
+                    <label for="q1C">C. 6</label><br>
+                    <input type="radio" id="q1D" name="q1" value="D">
+                    <label for="q1D">D. 8</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 2: Bầu trời vào ban ngày có màu gì?</p>
+                    <input type="radio" id="q2A" name="q2" value="A">
+                    <label for="q2A">A. Xanh dương</label><br>
+                    <input type="radio" id="q2B" name="q2" value="B">
+                    <label for="q2B">B. Đỏ</label><br>
+                    <input type="radio" id="q2C" name="q2" value="C">
+                    <label for="q21C">C. Vàng</label><br>
+                    <input type="radio" id="q2D" name="q2" value="D">
+                    <label for="q2D">D. Đen</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 3: Tháng mấy trong năm có 28 ngày?</p>
+                    <input type="radio" id="q3A" name="q3" value="A">
+                    <label for="q3A">A. 1</label><br>
+                    <input type="radio" id="q3B" name="q3" value="B">
+                    <label for="q3B">B. 2</label><br>
+                    <input type="radio" id="q3C" name="q3" value="C">
+                    <label for="q3C">C. 3</label><br>
+                    <input type="radio" id="q3D" name="q3" value="D">
+                    <label for="q3D">D. 12</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 4: Loài vật nào sau đây sống trong nước?</p>
+                    <input type="radio" id="q4A" name="q4" value="A">
+                    <label for="q4A">A. Gấu</label><br>
+                    <input type="radio" id="q4B" name="q4" value="B">
+                    <label for="q4B">B. Hươu</label><br>
+                    <input type="radio" id="q4C" name="q4" value="C">
+                    <label for="q4C">C. Cá</label><br>
+                    <input type="radio" id="q4D" name="q4" value="D">
+                    <label for="q4D">D. Khỉ</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 5: Trái cây nào sau đây có vỏ màu vàng?</p>
+                    <input type="radio" id="q5A" name="q5" value="A">
+                    <label for="q5A">A. Dưa hấu</label><br>
+                    <input type="radio" id="q5B" name="q5" value="B">
+                    <label for="q5B">B. Chuối</label><br>
+                    <input type="radio" id="q5C" name="q5" value="C">
+                    <label for="q5C">C. Cam</label><br>
+                    <input type="radio" id="q5D" name="q5" value="D">
+                    <label for="q5D">D. Dâu</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 6: Con số nào lớn hơn: 10 hay 5?</p>
+                    <input type="radio" id="q6A" name="q6" value="A">
+                    <label for="q6A">A. 10</label><br>
+                    <input type="radio" id="q6B" name="q6" value="B">
+                    <label for="q6B">B. 5</label><br>
+                    <input type="radio" id="q6C" name="q6" value="C">
+                    <label for="q6C">C. Không ai lớn hơn</label><br>
+                    <input type="radio" id="q6D" name="q6" value="D">
+                    <label for="q6D">D. Cả hai bằng nhau</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 7: Thứ tự các ngày trong tuần bắt đầu từ thứ mấy?</p>
+                    <input type="radio" id="q7A" name="q7" value="A">
+                    <label for="q7A">A. Thứ Hai</label><br>
+                    <input type="radio" id="q7B" name="q7" value="B">
+                    <label for="q7B">B. Thứ Ba</label><br>
+                    <input type="radio" id="q7C" name="q7" value="C">
+                    <label for="q7C">C. Thứ Tư</label><br>
+                    <input type="radio" id="q7D" name="q7" value="D">
+                    <label for="q7D">D. Chủ Nhật</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 8: Mặt Trăng có ánh sáng tự nhiên hay nhân tạo?</p>
+                    <input type="radio" id="q8A" name="q8" value="A">
+                    <label for="q8A">A. Tự nhiên</label><br>
+                    <input type="radio" id="q8B" name="q8" value="B">
+                    <label for="q8B">B. Nhân tạo</label><br>
+                    <input type="radio" id="q8C" name="q8" value="C">
+                    <label for="q8C">C. Cả hai</label><br>
+                    <input type="radio" id="q8D" name="q8" value="D">
+                    <label for="q8D">D. Không có ánh sáng</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 9: Loài cây nào sau đây sinh sống trong môi trường nhiệt đới?</p>
+                    <input type="radio" id="q9A" name="q9" value="A">
+                    <label for="q9A">A. Thông</label><br>
+                    <input type="radio" id="q9B" name="q9" value="B">
+                    <label for="q9B">B. Sồi</label><br>
+                    <input type="radio" id="q9C" name="q9" value="C">
+                    <label for="q9C">C. Cọ</label><br>
+                    <input type="radio" id="q9D" name="q9" value="D">
+                    <label for="q9D">D. Thốt Nốt</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 10: Con số nào sau đây là số lẻ?</p>
+                    <input type="radio" id="q10A" name="q10" value="A">
+                    <label for="q10A">A. 2</label><br>
+                    <input type="radio" id="q10B" name="q10" value="B">
+                    <label for="q10B">B. 4</label><br>
+                    <input type="radio" id="q10C" name="q10" value="C">
+                    <label for="q10C">C. 6</label><br>
+                    <input type="radio" id="q10D" name="q10" value="D">
+                    <label for="q10D">D. 8</label><br>
+                </div>
+                
+                <button onclick="checkAnswers2()">Submit</button>
+                <div id="result2"></div>
+            </div>
+            <div class="question-group">
+                <h4>Nhóm 3: Câu hỏi chọn nhiều đáp án</h4>
+                <div class="question">
+                    <p>Câu 1: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q1A" name="q1" value="A">
+                    <label for="q1A">A. Thỏ</label><br>
+                    <input type="checkbox" id="q1B" name="q1" value="B">
+                    <label for="q1B">B. Gà</label><br>
+                    <input type="checkbox" id="q1C" name="q1" value="C">
+                    <label for="q1C">C. Cá heo</label><br>
+                    <input type="checkbox" id="q1D" name="q1" value="D">
+                    <label for="q1D">D. Cá mập</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 2: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q2A" name="q2" value="A">
+                    <label for="q2A">A. Cá mập</label><br>
+                    <input type="checkbox" id="q2B" name="q2" value="B">
+                    <label for="q2B">B. Gà</label><br>
+                    <input type="checkbox" id="q2C" name="q2" value="C">
+                    <label for="q21C">C. Thỏ</label><br>
+                    <input type="checkbox" id="q2D" name="q2" value="D">
+                    <label for="q2D">D. Cá heo</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 3: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q3A" name="q3" value="A">
+                    <label for="q3A">A. Cá mập</label><br>
+                    <input type="checkbox" id="q3B" name="q3" value="B">
+                    <label for="q3B">B. Cá heo</label><br>
+                    <input type="checkbox" id="q3C" name="q3" value="C">
+                    <label for="q3C">C. Gà</label><br>
+                    <input type="checkbox" id="q3D" name="q3" value="D">
+                    <label for="q3D">D. Thỏ</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 4: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q4A" name="q4" value="A">
+                    <label for="q4A">A. Gà</label><br>
+                    <input type="checkbox" id="q4B" name="q4" value="B">
+                    <label for="q4B">B. Cá mập</label><br>
+                    <input type="checkbox" id="q4C" name="q4" value="C">
+                    <label for="q4C">C. Cá heo</label><br>
+                    <input type="checkbox" id="q4D" name="q4" value="D">
+                    <label for="q4D">D. Thỏ</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 5: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q5A" name="q5" value="A">
+                    <label for="q5A">A. Cá heo</label><br>
+                    <input type="checkbox" id="q5B" name="q5" value="B">
+                    <label for="q5B">B. Gà</label><br>
+                    <input type="checkbox" id="q5C" name="q5" value="C">
+                    <label for="q5C">C. Thỏ</label><br>
+                    <input type="checkbox" id="q5D" name="q5" value="D">
+                    <label for="q5D">D. Cá mập</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 6: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q6A" name="q6" value="A">
+                    <label for="q6A">A. Gà </label><br>
+                    <input type="checkbox" id="q6B" name="q6" value="B">
+                    <label for="q6B">B. Cá mập</label><br>
+                    <input type="checkbox" id="q6C" name="q6" value="C">
+                    <label for="q6C">C. Cá heo</label><br>
+                    <input type="checkbox" id="q6D" name="q6" value="D">
+                    <label for="q6D">D. Thỏ</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 7: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q7A" name="q7" value="A">
+                    <label for="q7A">A. Cá heo</label><br>
+                    <input type="checkbox" id="q7B" name="q7" value="B">
+                    <label for="q7B">B. Gà</label><br>
+                    <input type="checkbox" id="q7C" name="q7" value="C">
+                    <label for="q7C">C. Thỏ</label><br>
+                    <input type="checkbox" id="q7D" name="q7" value="D">
+                    <label for="q7D">D. Cá mập</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 8: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q8A" name="q8" value="A">
+                    <label for="q8A">A. Gà</label><br>
+                    <input type="checkbox" id="q8B" name="q8" value="B">
+                    <label for="q8B">B. Thỏ</label><br>
+                    <input type="checkbox" id="q8C" name="q8" value="C">
+                    <label for="q8C">C. Cá Heo</label><br>
+                    <input type="checkbox" id="q8D" name="q8" value="D">
+                    <label for="q8D">D. Cá mập</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 9: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q9A" name="q9" value="A">
+                    <label for="q9A">A. Cá mập</label><br>
+                    <input type="checkbox" id="q9B" name="q9" value="B">
+                    <label for="q9B">B. Cá heo</label><br>
+                    <input type="checkbox" id="q9C" name="q9" value="C">
+                    <label for="q9C">C. Thỏ</label><br>
+                    <input type="checkbox" id="q9D" name="q9" value="D">
+                    <label for="q9D">D. Gà</label><br>
+                </div>
+                <div class="question">
+                    <p>Câu 10: Loại động vật nào sống trên cạn?</p>
+                    <input type="checkbox" id="q10A" name="q10" value="A">
+                    <label for="q10A">A. Gà</label><br>
+                    <input type="checkbox" id="q10B" name="q10" value="B">
+                    <label for="q10B">B. Cá heo</label><br>
+                    <input type="checkbox" id="q10C" name="q10" value="C">
+                    <label for="q10C">C. Thỏ</label><br>
+                    <input type="checkbox" id="q10D" name="q10" value="D">
+                    <label for="q10D">D. Cá mập</label><br>
+                </div>
+                <button onclick="checkAnswers3()">Submit</button>
+                <div id="result3"></div>
+            </div>
+            <div class="question-group">
+                <h4>Nhóm 4: Câu hỏi tự luận</h4>
+                <div class="question">
+                    <p>Câu 1: 1 + 1 =?</p>
+                    <input type="text" id="q1Answer" name="q1">
+                </div>
+                <div class="question">
+                    <p>Câu 2: 1 + 2 =?</p>
+                    <input type="text" id="q2Answer" name="q2">
+                </div>
+                <div class="question">
+                    <p>Câu 3: 2 + 2 =?</p>
+                    <input type="text" id="q3Answer" name="q3">
+                </div>
+                <div class="question">
+                    <p>Câu 4: 4 + 5 =?</p>
+                    <input type="text" id="q4Answer" name="q4">
+                </div>
+                <div class="question">
+                    <p>Câu 5: 2 + 3 =?</p>
+                    <input type="text" id="q5Answer" name="q5">
+                </div>
+                <div class="question">
+                    <p>Câu 6: 5 + 6 =?</p>
+                    <input type="text" id="q6Answer" name="q6">
+                </div>
+                <div class="question">
+                    <p>Câu 7: 2 + 6 =?</p>
+                    <input type="text" id="q7Answer" name="q7">
+                </div>
+                <div class="question">
+                    <p>Câu 8: 7 + 1 =?</p>
+                    <input type="text" id="q8Answer" name="q8">
+                </div>
+                <div class="question">
+                    <p>Câu 9: 9 + 1 =?</p>
+                    <input type="text" id="q9Answer" name="q9">
+                </div>
+                <div class="question">
+                    <p>Câu 10: 2 - 1 =?</p>
+                    <input type="text" id="q10Answer" name="q10">
+                </div>
+                <button onclick="checkAnswers4()">Submit</button>
+                <div id="result4"></div>
+            </div>
+            <button onclick="checkAnswers5()">Kết quả</button>
+            <div id="result5"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>S
 </body>
 </html>
